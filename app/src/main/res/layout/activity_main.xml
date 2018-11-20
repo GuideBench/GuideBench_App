@@ -17,7 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
+        android:background="@color/brown3"
+        android:backgroundTint="@color/brown3"
         app:tabIndicatorColor="@android:color/transparent"></android.support.design.widget.TabLayout>
     <FrameLayout
         android:layout_alignParentBottom="true"

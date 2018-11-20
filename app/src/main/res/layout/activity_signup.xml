@@ -40,6 +40,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/edit_signup_username"
                 android:typeface="serif"
                 android:textStyle="italic"
                 android:layout_centerInParent="true"
@@ -69,6 +70,7 @@
                 android:textSize="24dp" />
 
             <EditText
+                android:id="@+id/edit_signup_id"
                 android:typeface="serif"
                 android:textStyle="italic"
                 android:layout_centerInParent="true"
@@ -98,6 +100,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/edit_signup_pw"
                 android:typeface="serif"
                 android:textStyle="italic"
                 android:layout_centerInParent="true"
@@ -109,34 +112,6 @@
                 android:textColor="#6b5545" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/rl_act_signup_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_act_signup_password">
-
-            <TextView
-                android:typeface="serif"
-                android:id="@+id/tv_act_signup_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_margin="16dp"
-                android:text="ADDRESS"
-                android:textColor="#6b5545"
-                android:textSize="20dp" />
-
-            <EditText
-                android:typeface="serif"
-                android:textStyle="italic"
-                android:layout_centerInParent="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_toRightOf="@+id/tv_act_signup_address"
-                android:hint="주소를 입력하세요."
-                android:textColor="#6b5545" />
-        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -146,6 +121,7 @@
         android:layout_marginTop="32dp">
 
         <Button
+            android:id="@+id/btn_signup_submit"
             android:typeface="serif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
