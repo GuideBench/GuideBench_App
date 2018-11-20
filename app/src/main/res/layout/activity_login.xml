@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login.view.login.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#dcd9d4"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_act_login_logo"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/gachi_logo" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_act_login_logo">
+
+            <RelativeLayout
+                android:layout_marginTop="48dp"
+                android:layout_marginHorizontal="40dp"
+                android:id="@+id/rl_act_login_enterID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#dcd9d4">
+
+                <TextView
+                    android:id="@+id/tv_act_login_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="ID"
+                    android:textColor="#6b5545"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <EditText
+                    android:layout_marginLeft="16dp"
+                    android:id="@+id/et_act_login_idEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/tv_act_login_id"
+                    android:inputType="text|textCapWords|textNoSuggestions"
+                    android:textColor="#bda492"
+                    android:textSize="24sp"
+                    android:textStyle="italic" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginHorizontal="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_act_login_enterID">
+
+                <TextView
+                    android:id="@+id/tv_act_login_pw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="PW"
+                    android:textColor="#6b5545"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/et_act_login_pwEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_act_login_pw"
+                    android:inputType="textPassword"
+                    android:textColor="#6b5545"
+                    android:textSize="24dp"
+                    android:textStyle="italic" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#dcd9d4"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b_act_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="80dp"
+            android:background="#bda492"
+            android:text="로그인"
+            android:textColor="#6b5545" />
+
+        <Button
+            android:id="@+id/b_act_login_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:background="#bda492"
+            android:text="회원가입"
+            android:textColor="#6b5545" />
+    </RelativeLayout>
+
+</LinearLayout>

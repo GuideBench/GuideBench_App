@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dcd9d4">
+
+    <TextView
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:id="@+id/tv_act_sign_up_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="회원가입"
+        android:textColor="#6b5545"
+        android:textSize="32dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_act_sinup_enter_user_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_act_sign_up_page"
+        android:layout_marginTop="32dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_act_signup_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:typeface="serif"
+                android:id="@+id/tv_act_signup_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="16dp"
+                android:text="NAME"
+                android:textColor="#6b5545"
+                android:textSize="20dp" />
+
+            <EditText
+                android:typeface="serif"
+                android:textStyle="italic"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@+id/tv_act_signup_name"
+                android:hint="이름을 입력하세요."
+                android:textColor="#6b5545" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_act_signup_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_act_signup_name">
+
+            <TextView
+                android:typeface="serif"
+                android:id="@+id/tv_act_signup_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="20dp"
+                android:text="ID"
+                android:textColor="#6b5545"
+                android:textSize="24dp" />
+
+            <EditText
+                android:typeface="serif"
+                android:textStyle="italic"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@+id/tv_act_signup_id"
+                android:hint="아이디를 입력하세요."
+                android:textColor="#6b5545" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_act_signup_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_act_signup_id">
+
+            <TextView
+                android:typeface="serif"
+                android:id="@+id/tv_act_signup_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="16dp"
+                android:text="PASSWORD"
+                android:textColor="#6b5545"
+                android:textSize="20dp" />
+
+            <EditText
+                android:typeface="serif"
+                android:textStyle="italic"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@+id/tv_act_signup_password"
+                android:hint="비밀번호를 입력하세요."
+                android:textColor="#6b5545" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_act_signup_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_act_signup_password">
+
+            <TextView
+                android:typeface="serif"
+                android:id="@+id/tv_act_signup_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="16dp"
+                android:text="ADDRESS"
+                android:textColor="#6b5545"
+                android:textSize="20dp" />
+
+            <EditText
+                android:typeface="serif"
+                android:textStyle="italic"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@+id/tv_act_signup_address"
+                android:hint="주소를 입력하세요."
+                android:textColor="#6b5545" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_act_sinup_enter_user_info"
+        android:layout_marginTop="32dp">
+
+        <Button
+            android:typeface="serif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="#bda492"
+            android:text="SUBMIT"
+            android:textStyle="bold"
+            android:textColor="#6b5545" />
+    </RelativeLayout>
+</RelativeLayout>
