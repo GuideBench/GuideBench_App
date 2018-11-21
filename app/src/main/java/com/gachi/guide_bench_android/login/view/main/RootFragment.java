@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gachi.guide_bench_android.R;
-import com.kb.challenge.app.today.today_android.R;
 
 /**
  * Created by shineeseo on 2018. 11. 7..
@@ -29,7 +28,7 @@ public class RootFragment extends Fragment {
    * When this container fragment is created, we fill it with our first
    * "real" fragment
    */
-        transaction.replace(R.id.root_frame, MainFragment.newInstance(), TAG);
+       // transaction.replace(R.id.root_frame, MainFragment.newInstance(), TAG);
         transaction.addToBackStack(TAG);
         transaction.commit();
 

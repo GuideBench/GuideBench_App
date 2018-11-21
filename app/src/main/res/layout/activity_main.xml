@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <com.kb.challenge.app.today.today_android.view.main.CustomViewPager
+    <com.gachi.guide_bench_android.login.view.main.CustomViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

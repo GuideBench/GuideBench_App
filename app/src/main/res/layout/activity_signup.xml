@@ -40,6 +40,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:inputType="text"
                 android:id="@+id/edit_signup_username"
                 android:typeface="serif"
                 android:textStyle="italic"
@@ -103,6 +104,7 @@
                 android:id="@+id/edit_signup_pw"
                 android:typeface="serif"
                 android:textStyle="italic"
+                android:inputType="numberPassword"
                 android:layout_centerInParent="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
