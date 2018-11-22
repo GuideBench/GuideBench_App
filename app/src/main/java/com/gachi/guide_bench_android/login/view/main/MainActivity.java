@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         //tablayout, viewPager 적용
-      //  adapter = new PagerAdapter(getSupportFragmentManager());
-     //   viewPager = (CustomViewPager) findViewById(R.id.view_pager);
-     //   viewPager.setPagingEnabled(false);
-      //  viewPager.setAdapter(adapter);
-
+        //  adapter = new PagerAdapter(getSupportFragmentManager());
+        //   viewPager = (CustomViewPager) findViewById(R.id.view_pager);
+        //   viewPager.setPagingEnabled(false);
+        //  viewPager.setAdapter(adapter);
+/*
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -138,8 +138,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+*/
 
+    }
 
 }
-
 

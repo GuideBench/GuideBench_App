@@ -1,7 +1,9 @@
 package com.gachi.guide_bench_android.login.network;
 
 import android.app.Activity;
+import android.widget.EditText;
 
+import com.gachi.guide_bench_android.R;
 import com.gachi.guide_bench_android.login.network.PostRequest;
 
 import java.net.MalformedURLException;
@@ -14,13 +16,11 @@ public class SignupData extends PostRequest {
 
     @Override
     protected void onPreExecute() {
-        String defaultUrl = "http://13.124.180.79";
+        String defaultUrl = "http://ds211724.mlab.com:11724/bench_test.users";
         try {
             url = new URL(defaultUrl + "/user/signup");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
     }
-
-
 }

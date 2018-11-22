@@ -1,4 +1,4 @@
-package com.gachi.guide_bench_android.login.model;
+package com.gachi.guide_bench_android.login.network;
 
 /**
  * Created by kwanwoo on 2017. 10. 17..

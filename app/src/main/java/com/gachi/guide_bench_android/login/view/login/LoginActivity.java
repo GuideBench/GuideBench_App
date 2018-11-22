@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.gachi.guide_bench_android.R;
+import com.gachi.guide_bench_android.login.network.SignupActivity;
 
 public class LoginActivity extends AppCompatActivity {
     Button b_act_login_longin;
