@@ -9,10 +9,6 @@ import android.view.ViewGroup;
 
 import com.gachi.guide_bench_android.R;
 
-/**
- * Created by shineeseo on 2018. 11. 7..
- */
-
 public class RootFragment extends Fragment {
     private static final String TAG = "RootFragment";
 

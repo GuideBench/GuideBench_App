@@ -1,4 +1,4 @@
-package com.gachi.guide_bench_android.login.view.main;
+package com.gachi.guide_bench_android;
 
 
 import android.os.Bundle;
@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.gachi.guide_bench_android.CustomViewPager;
-import com.gachi.guide_bench_android.R;
 import com.gachi.guide_bench_android.adapter.PagerAdapter;
 
 public class MainActivity extends AppCompatActivity {

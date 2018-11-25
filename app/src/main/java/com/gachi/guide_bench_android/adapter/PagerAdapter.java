@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-
 import com.gachi.guide_bench_android.fragment.BoardFragment;
 import com.gachi.guide_bench_android.fragment.LikeFragment;
 import com.gachi.guide_bench_android.fragment.MainFragment;
