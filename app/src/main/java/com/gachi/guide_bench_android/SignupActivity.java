@@ -1,4 +1,4 @@
-package com.gachi.guide_bench_android.login.network;
+package com.gachi.guide_bench_android;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.gachi.guide_bench_android.R;
 import com.gachi.guide_bench_android.login.view.main.MainActivity;
+import com.gachi.guide_bench_android.network.SignupData;
 
 import org.json.JSONException;
 import org.json.JSONObject;

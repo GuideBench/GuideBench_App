@@ -1,4 +1,4 @@
-package com.gachi.guide_bench_android.login.view.main;
+package com.gachi.guide_bench_android.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

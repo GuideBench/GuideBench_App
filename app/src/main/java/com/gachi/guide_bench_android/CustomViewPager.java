@@ -1,4 +1,4 @@
-package com.gachi.guide_bench_android.login.view.main;
+package com.gachi.guide_bench_android;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

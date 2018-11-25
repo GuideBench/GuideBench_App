@@ -1,4 +1,4 @@
-package com.gachi.guide_bench_android.login.view.login;
+package com.gachi.guide_bench_android;
 
 import android.app.Activity;
 import android.os.Bundle;
