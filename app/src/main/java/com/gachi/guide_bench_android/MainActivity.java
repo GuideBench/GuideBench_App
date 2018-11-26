@@ -1,6 +1,5 @@
 package com.gachi.guide_bench_android;
 
-
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,19 +11,10 @@ import android.widget.ImageView;
 import com.gachi.guide_bench_android.adapter.PagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
+
     private PagerAdapter adapter;
     private CustomViewPager viewPager;
     private TabLayout tabLayout;
-
-    @Override
-    public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() != 0)
-            getFragmentManager().popBackStack();
-        else {
-            super.onBackPressed();
-        }
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
         mainIcon.setImageResource(R.drawable.ic_main_unselected);
         mainIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        final ImageView commuIcon = new ImageView(this);
-        commuIcon.setImageResource(R.drawable.ic_likelist_unselected);
-        commuIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        final ImageView likeIcon = new ImageView(this);
+        likeIcon.setImageResource(R.drawable.ic_likelist_unselected);
+        likeIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-        final ImageView coinIcon = new ImageView(this);
-        coinIcon.setImageResource(R.drawable.ic_board_unselected);
-        coinIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        final ImageView boardIcon = new ImageView(this);
+        boardIcon.setImageResource(R.drawable.ic_board_unselected);
+        boardIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         final ImageView settingIcon = new ImageView(this);
         settingIcon.setImageResource(R.drawable.ic_settings_unselected);
@@ -75,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
         settingIconAct.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         tabLayout.getTabAt(0).setCustomView(mainIconAct);
-        tabLayout.getTabAt(1).setCustomView(commuIcon);
-        tabLayout.getTabAt(2).setCustomView(coinIcon);
+        tabLayout.getTabAt(1).setCustomView(likeIcon);
+        tabLayout.getTabAt(2).setCustomView(boardIcon);
         tabLayout.getTabAt(3).setCustomView(settingIcon);
 
         //탭선택시
@@ -125,10 +115,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
 
+    }
     public void inVisibleTabLayout() {
         ((ViewGroup) tabLayout).setVisibility(View.GONE);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() != 0)
+            getFragmentManager().popBackStack();
+        else {
+            super.onBackPressed();
+        }
 
     }
 

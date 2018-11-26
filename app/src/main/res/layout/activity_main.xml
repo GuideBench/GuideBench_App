@@ -6,16 +6,19 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <com.gachi.guide_bench_android.login.view.main.CustomViewPager
+    <com.gachi.guide_bench_android.CustomViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/tabLayout" />
-
+<View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="@color/brown5"/>
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="72dp"
         android:layout_alignParentBottom="true"
         android:background="@color/brown3"
         android:backgroundTint="@color/brown3"

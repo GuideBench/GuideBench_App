@@ -23,6 +23,8 @@
             android:theme="@android:style/Theme.NoTitleBar"/>
         <activity android:name=".SignupActivity"></activity>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".QnAActivity"></activity>
+        <activity android:name=".QnAWirteActivity"></activity>
     </application>
 
 </manifest>

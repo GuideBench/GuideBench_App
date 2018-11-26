@@ -9,8 +9,12 @@ import android.view.ViewGroup;
 import com.gachi.guide_bench_android.R;
 
 public class SettingFragment extends Fragment {
-    private static final String TAG = "CommunityRootFragment";
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
