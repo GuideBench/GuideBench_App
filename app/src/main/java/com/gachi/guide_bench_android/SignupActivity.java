@@ -72,6 +72,11 @@ public class SignupActivity extends AppCompatActivity {
         Call<PostSignUpResponse> postSignUpResponse = networkService.PostSignUpResponse("application/json", gsonObject);
         postSignUpResponse.enqueue(new Callback<PostSignUpResponse>() {
             @Override
+            public void onFailure(Call<PostSignUpResponse> call, Throwable t) {
+                Log.e("Sign up fail",t.toString());
+            }
+
+            @Override
             public void onResponse(Call<PostSignUpResponse> call, Response<PostSignUpResponse> response) {
                 if (response.isSuccessful()) {
                     Log.v("check process2", "check process2!!!");
@@ -80,14 +85,10 @@ public class SignupActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(SignupActivity.this, MainActivity.class);
                     startActivity(intent);
-                    //finish();
+                    finish();
                 }
             }
 
-            @Override
-            public void onFailure(Call<PostSignUpResponse> call, Throwable t) {
-                Log.e("Sign up fail",t.toString());
-            }
         });
     }
     }

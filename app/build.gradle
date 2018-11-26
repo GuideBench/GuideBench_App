@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
 
 android {
     compileSdkVersion 27
@@ -35,5 +37,10 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.0.0'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
 
+}
+
+
+repositories {
+    mavenCentral()
 }
 

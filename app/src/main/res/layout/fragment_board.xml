@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/brown3">
+        <RelativeLayout
+            android:id="@+id/rl_board_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="게시판"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/brown1"
+            android:paddingVertical="12dp"
+            android:background="@color/brown2"/>
+        <ImageView
+            android:id="@+id/img_board_back"
+            android:layout_centerVertical="true"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_arrow_left"/>
+        </RelativeLayout>
+        <View
+            android:id="@+id/line_board_title"
+            android:layout_below="@+id/rl_board_title"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/brown1"
+            />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line_board_title">
+            <TextView
+                android:id="@+id/txt_board_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="28dp"
+                android:textColor="@color/brown1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginVertical="32dp"
+                android:text="이벤트 보러가기"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/brown1"
+                />
+            <TextView
+                android:id="@+id/txt_board_qna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="28dp"
+                android:textColor="@color/brown1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginVertical="32dp"
+                android:text="질의응답"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/brown1"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="72dp"
+                android:layout_marginBottom="100dp"
+                android:src="@drawable/gachi_logo"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
