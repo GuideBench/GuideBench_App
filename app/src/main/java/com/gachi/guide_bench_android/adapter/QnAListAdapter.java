@@ -1,8 +1,11 @@
 package com.gachi.guide_bench_android.adapter;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,6 +23,9 @@ import java.util.ArrayList;
 public class QnAListAdapter extends RecyclerView.Adapter<QnAListAdapter.ViewHolder> {
     Context context;
 
+    Intent intent = ((Activity) context).getIntent();
+
+    Bundle bundle = intent.getExtras();
     public QnAListAdapter(Context context) {
         super();
         this.context = context;
@@ -36,15 +42,14 @@ public class QnAListAdapter extends RecyclerView.Adapter<QnAListAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull QnAListAdapter.ViewHolder holder, int position) {
         final int pos = position;
-
-     //   Log.v("communityFriendsList", cheerupMsgDataList.size() + " ");
-    //    viewHolder.cheerup_msg_date.setText(cheerupMsgDataList.get(i).getFeeling_at());
-     //   viewHolder.cheerup_msg_txt.setText(cheerupMsgDataList.get(i).getComment());
+        holder.txt_qna_list_num.setText(pos);
+        holder.txt_qna_list_username.setText(bundle.getString("NAME"));
+        holder.txt_qna_list_title.setText(bundle.getString("TITLE"));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 2;
     }
 
 

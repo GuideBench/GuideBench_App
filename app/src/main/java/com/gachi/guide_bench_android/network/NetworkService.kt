@@ -1,5 +1,6 @@
 package com.gachi.guide_bench_android.network
 
+import com.gachi.guide_bench_android.post.PostQnASubmitResponse
 import com.gachi.guide_bench_android.post.PostSignInResponse
 import com.gachi.guide_bench_android.post.PostSignUpResponse
 import com.google.gson.JsonObject
@@ -21,4 +22,10 @@ interface NetworkService {
             @Header("Content-Type") content_type: String,
             @Body body : JsonObject
     ) : Call<PostSignInResponse>
+    //질문 등록
+    @POST("/qna/question/")
+    fun PostQnASubmitResponse(
+            @Header("Content-Type") content_type: String,
+            @Body body: JsonObject
+    ) : Call<PostQnASubmitResponse>
 }

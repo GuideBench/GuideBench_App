@@ -45,7 +45,7 @@
                 android:background="@color/brown2"
                 />
             <TextView
-                android:id="@+id/txt_board_qna"
+                android:id="@+id/txt_board_seoullist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
@@ -53,7 +53,22 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginVertical="24dp"
                 android:typeface="serif"
-                android:text="질의응답"/>
+                android:text="서울의 유명한 시장 및 맛집"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/brown2"
+                />
+            <TextView
+            android:id="@+id/txt_board_qna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/brown1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginVertical="24dp"
+            android:typeface="serif"
+            android:text="질의응답"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
