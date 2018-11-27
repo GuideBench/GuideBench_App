@@ -3,11 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/brown4"
     android:id="@+id/root_frame2" >
-
+<RelativeLayout
+    android:id="@+id/rl_main_go_map_img"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_above="@+id/img_main_logo"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:typeface="serif"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="main"/>
-
+        android:textColor="@color/brown1"
+        android:text="내 주위 벤치 찾기
+CLICK !"/>
+    <View
+        android:layout_centerInParent="true"
+        android:layout_width="164dp"
+        android:layout_height="100dp"
+        android:background="@color/brown1"/>
+    <View
+        android:layout_centerInParent="true"
+        android:layout_width="161dp"
+        android:layout_height="97dp"
+        android:background="@color/brown3"/>
+    <ImageView
+        android:id="@+id/img_main_logo"
+        android:layout_marginTop="8dp"
+        android:layout_centerInParent="true"
+        android:layout_width="160dp"
+        android:layout_height="96dp"
+        android:src="@drawable/gachi_logo"/>
+</RelativeLayout>
 </FrameLayout>

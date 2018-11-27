@@ -10,6 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCXAAlfzMqWttd2ffMljPaHUcVtitd5Zi0" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +28,7 @@
         <activity android:name=".SignupActivity"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".QnAActivity"></activity>
+        <activity android:name=".MainMapActivity"></activity>
         <activity android:name=".QnAWirteActivity"></activity>
     </application>
 

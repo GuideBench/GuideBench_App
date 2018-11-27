@@ -21,6 +21,7 @@ private RecyclerView mRecyclerView;
         setContentView(R.layout.activity_qna);
 
         Back();
+//
 //        mRecyclerView = (RecyclerView) findViewById(R.id.board_qna_recycler_view);
 //        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
 //        mRecyclerView.setLayoutManager(mLayoutManager);
