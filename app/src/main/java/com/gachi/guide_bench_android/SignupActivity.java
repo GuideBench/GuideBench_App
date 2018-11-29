@@ -79,13 +79,12 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PostSignUpResponse> call, Response<PostSignUpResponse> response) {
                 if (response.isSuccessful()) {
-                    Log.v("check process2", "check process2!!!");
+                        Log.v("check process2", "check process2!!!");
+                        Log.v("회원가입 페이지 message", response.body().getMessage().toString());
 
-                    Log.v("회원가입 페이지 message", response.body().getMessage().toString());
-
-                    Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
                 }
             }
 
