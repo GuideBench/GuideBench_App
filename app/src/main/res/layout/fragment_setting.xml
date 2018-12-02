@@ -59,11 +59,12 @@
                 android:background="@color/brown2"
                 />
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="72dp"
-                android:layout_marginBottom="100dp"
-                android:src="@drawable/gachi_logo"/>
+                android:layout_marginTop="16dp"
+                android:layout_width="110dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="16dp"
+                android:layout_height="80dp"
+                android:src="@drawable/gachi_logo" />
         </LinearLayout>
 
 

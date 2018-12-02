@@ -30,6 +30,8 @@
         <activity android:name=".QnAActivity"></activity>
         <activity android:name=".MainMapActivity"></activity>
         <activity android:name=".QnAWirteActivity"></activity>
+        <activity android:name=".SeoulStoreActivity"></activity>
+        <activity android:name=".EventActivity"></activity>
     </application>
 
 </manifest>

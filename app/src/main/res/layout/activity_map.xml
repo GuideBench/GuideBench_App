@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <fragment
-        android:id="@+id/map"
-        android:layout_width="280dp"
-        android:layout_height="200dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brown4">
+    <RelativeLayout
+        android:id="@+id/rl_map_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="내 벤치 위치"
+            android:typeface="serif"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/brown1"
+            android:paddingVertical="16dp"
+            android:background="@color/brown3"/>
+        <ImageView
+            android:id="@+id/img_map_back"
+            android:layout_centerVertical="true"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_arrow_left"/>
+
+    </RelativeLayout>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_map_title">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rl_map"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="208dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_centerInParent="true"
-        class="com.google.android.gms.maps.MapFragment" />
+        android:background="@color/brown3"/>
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="24dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            class="com.google.android.gms.maps.MapFragment" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/txt_map_bench_name"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="@color/brown1"
+        android:textAlignment="center"
+        android:text="벤치를 클릭하면 이름이 나타납니다"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_below="@+id/rl_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+   <View
+       android:id="@+id/view1"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:layout_marginVertical="8dp"
+       android:layout_below="@+id/txt_map_bench_name"
+       android:background="@color/brown2" />
+    <TextView
+        android:layout_below="@id/view1"
+        android:layout_width="wrap_content"
+        android:typeface="serif"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/brown1"
+        android:text="나의 벤치 주변 시장 및 맛집"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map_store_recycler_view"
+        ></android.support.v7.widget.RecyclerView>
+</LinearLayout>
+    </ScrollView>
 </RelativeLayout>

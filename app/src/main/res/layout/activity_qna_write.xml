@@ -52,14 +52,26 @@
                 android:layout_height="wrap_content"
                 android:hint="제목"
                 android:paddingLeft="16dp"/>
-            <EditText
-                android:id="@+id/edit_qna_write_content"
-                android:layout_marginTop="16dp"
-                android:inputType="textMultiLine"
+            <!--<EditText-->
+                <!--android:id="@+id/edit_qna_write_content"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:inputType="textMultiLine"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="내용"-->
+                <!--android:paddingLeft="16dp"/>-->
+            <EditText android:id="@+id/edit_qna_write_content"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="내용"
-                android:paddingLeft="16dp"/>
+                android:lines="5"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+            android:paddingLeft="16dp"
+            android:hint="내용(최대 다섯줄 입력이 가능합니다)"
+                android:scrollHorizontally="true"
+                android:minWidth="10.0dip"
+                android:maxWidth="5.0dip"/>
         </LinearLayout>
     </RelativeLayout>
     <Button

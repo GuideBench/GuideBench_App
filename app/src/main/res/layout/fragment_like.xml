@@ -9,7 +9,7 @@
             android:id="@+id/txt_board_title"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="게시판"
+            android:text="즐겨찾기 리스트"
             android:typeface="serif"
             android:textSize="16dp"
             android:textAlignment="center"
@@ -24,56 +24,47 @@
             android:layout_height="2dp"
             android:background="@color/brown2"
             />
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/line_board_title">
+            android:layout_below="@+id/line_board_title"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/txt_board_event"
-                android:typeface="serif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:textColor="@color/brown1"
-                android:layout_marginLeft="16dp"
                 android:layout_marginVertical="24dp"
-                android:text="이벤트 보러가기"/>
+                android:layout_marginLeft="16dp"
+                android:text="내가 좋아요한 이벤트"
+                android:textColor="@color/brown1"
+                android:textSize="16dp"
+                android:typeface="serif" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/brown2"
-                />
+                android:background="@color/brown2" />
+
             <TextView
                 android:id="@+id/txt_board_seoul_store"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:textColor="@color/brown1"
-                android:layout_marginLeft="16dp"
                 android:layout_marginVertical="24dp"
-                android:typeface="serif"
-                android:text="서울의 유명한 시장 및 맛집"/>
+                android:layout_marginLeft="16dp"
+                android:text="내가 좋아요 한 시장 및 맛집"
+                android:textColor="@color/brown1"
+                android:textSize="16dp"
+                android:typeface="serif" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/brown2"
-                />
-            <TextView
-            android:id="@+id/txt_board_qna"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:textColor="@color/brown1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginVertical="24dp"
-            android:typeface="serif"
-            android:text="질의응답"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/brown2"
-                />
+                android:background="@color/brown2" />
+
+
             <ImageView
                 android:layout_marginTop="16dp"
                 android:layout_width="110dp"
@@ -85,7 +76,4 @@
 
 
     </RelativeLayout>
-
-
-
 </RelativeLayout>
