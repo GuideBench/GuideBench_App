@@ -1,7 +1,10 @@
 package com.gachi.guide_bench_android;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -10,8 +13,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gachi.guide_bench_android.R;
-import com.gachi.guide_bench_android.SignupActivity;
 import com.gachi.guide_bench_android.network.ApplicationController;
 import com.gachi.guide_bench_android.network.NetworkService;
 import com.gachi.guide_bench_android.post.PostSignInResponse;
@@ -28,27 +29,27 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
+
     Button b_act_login_longin;
     Button b_act_login_signup;
     private NetworkService networkService=  ApplicationController.Companion.getInstance().getNetworkService();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         startActivity(new Intent(this, SplashActivity.class));
         setOnBtnClickListerner();
+        getID();
     }
 
     private void setOnBtnClickListerner (){
 
         b_act_login_longin = findViewById(R.id.b_act_login);
         b_act_login_longin.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-
                 getSignInResponseData();
+
             }
 
         });
@@ -66,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     private void getSignInResponseData(){
-
         EditText et_act_login_idEdit=(EditText) findViewById(R.id.et_act_login_idEdit);
         EditText et_act_login_pwEdit=(EditText) findViewById(R.id.et_act_login_pwEdit);
         String input_id= (String)et_act_login_idEdit.getText().toString();
@@ -91,11 +91,24 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<PostSignInResponse> call, Response<PostSignInResponse> response) {
+                EditText et_act_login_idEdit=(EditText) findViewById(R.id.et_act_login_idEdit);
+               String input_id= (String)et_act_login_idEdit.getText().toString();
+//                SharedPreferences sharedPreference = getSharedPreferences("MYPREFRENCE", Context.MODE_MULTI_PROCESS | Context.MODE_WORLD_READABLE);
+//
+//                if (sharedPreference.getString("user_id",input_id)!=null){
+//                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
 
                 if(response.isSuccessful()) {
                     Log.v("로그인 페이지 message", response.body().getMessage().toString());
+                    saveID();
+
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
                     startActivity(intent);
+
                     Toast.makeText(getApplicationContext(), "환영합니다.", Toast.LENGTH_LONG).show();
                 }else{
                     TextView txt_login_id_err=(TextView) findViewById(R.id.txt_login_id_err);
@@ -111,4 +124,47 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-}
+
+        // 값 불러오기
+        private void getID(){
+            EditText et_act_login_idEdit=(EditText) findViewById(R.id.et_act_login_idEdit);
+            String input_id= (String)et_act_login_idEdit.getText().toString();
+            SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+            String loginId = pref.getString("input_id",null);
+            pref.getString("input_id", input_id);
+            if (loginId != null){
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "환영합니다", Toast.LENGTH_LONG).show();
+            }
+        }
+
+        // 값 저장하기
+        private void saveID(){
+            EditText et_act_login_idEdit=(EditText) findViewById(R.id.et_act_login_idEdit);
+            String input_id= (String)et_act_login_idEdit.getText().toString();
+            SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putString("input_id", input_id);
+            editor.commit();
+        }
+
+        // 값(Key Data) 삭제하기
+        public void removePreferences(){
+            SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.remove("input_id");
+            editor.commit();
+        }
+
+        // 값(ALL Data) 삭제하기
+        private void removeAllPreferences(){
+            SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.clear();
+            editor.commit();
+        }
+
+
+    }
+

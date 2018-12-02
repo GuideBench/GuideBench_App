@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/brown4"
+    android:background="@color/brown4"
     android:id="@+id/root_frame2" >
 <RelativeLayout
     android:id="@+id/rl_main_go_map_img"
