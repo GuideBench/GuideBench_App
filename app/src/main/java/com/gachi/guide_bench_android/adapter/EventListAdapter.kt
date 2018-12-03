@@ -19,8 +19,8 @@ class EventListAdapter(val ctx: Context, val eventList: ArrayList<EventData>) :
     override fun getItemCount(): Int = eventList.size
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.title.text= eventList[position].title
-        holder.content.text= eventList[position].content
+        holder.title.text= eventList[position].event_title
+        holder.content.text= eventList[position].event_content
             }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {

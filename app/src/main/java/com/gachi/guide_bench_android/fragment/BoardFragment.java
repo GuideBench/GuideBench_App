@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.gachi.guide_bench_android.BoardActivity;
 import com.gachi.guide_bench_android.EventActivity;
 import com.gachi.guide_bench_android.QnAActivity;
 import com.gachi.guide_bench_android.R;
@@ -49,7 +50,7 @@ public class BoardFragment extends Fragment {
         txt_board_event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), EventActivity.class);
+                Intent intent = new Intent(getActivity(), BoardActivity.class);
                 startActivity(intent);
             }
         });

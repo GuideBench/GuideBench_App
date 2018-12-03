@@ -51,7 +51,7 @@ public class MapStoreListAdapter extends RecyclerView.Adapter<MapStoreListAdapte
 
     @Override
     public int getItemCount() {
-        return storeItems.size();
+        return 6;
     }
 
     private void setAnimation(View viewToAnimate, int position) {
