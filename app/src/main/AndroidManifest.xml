@@ -36,6 +36,7 @@
         <activity android:name=".SeoulStoreActivity"></activity>
         <activity android:name=".EventActivity"></activity>
         <activity android:name=".BoardActivity"></activity>
+        <activity android:name=".QnaListDetailActivity"></activity>
     </application>
 
 </manifest>

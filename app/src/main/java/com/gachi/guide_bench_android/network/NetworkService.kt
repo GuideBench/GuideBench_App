@@ -1,6 +1,7 @@
 package com.gachi.guide_bench_android.network
 
 import com.gachi.guide_bench_android.get.GetEventLIstResponse
+import com.gachi.guide_bench_android.get.GetQnaListResponse
 import com.gachi.guide_bench_android.post.PostQnASubmitResponse
 import com.gachi.guide_bench_android.post.PostSignInResponse
 import com.gachi.guide_bench_android.post.PostSignUpResponse
@@ -35,4 +36,10 @@ interface NetworkService {
     fun getEventListResponse(
             @Header("Content-Type") content_type: String
     ): Call<GetEventLIstResponse>
+
+    //qna리스트 불러오기
+    @GET("/qna/getqna")
+    fun getQnaListResponse(
+            @Header("Content-Type") content_type: String
+    ) : Call<GetQnaListResponse>
 }

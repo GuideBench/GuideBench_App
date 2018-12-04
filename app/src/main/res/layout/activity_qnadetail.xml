@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/brown3">
+
+    <RelativeLayout
+        android:id="@+id/rl_qna_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="상세보기"
+            android:typeface="serif"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/brown1"
+            android:paddingVertical="16dp"
+            android:background="@color/brown3"/>
+        <ImageView
+            android:id="@+id/img_qna_detail_back"
+            android:layout_centerVertical="true"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_arrow_left"/>
+    </RelativeLayout>
+    <View
+        android:id="@+id/view1"
+        android:layout_below="@+id/rl_qna_detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/brown1"/>
+
+    <ScrollView
+        android:layout_below="@id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:typeface="serif"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/brown1"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="질문 "/>
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/txt_qna_detail_qna_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="나는 질문의 제목"
+                android:textSize="16dp"
+                android:typeface="serif"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:backgroundTint="@color/brown1"
+                android:textColor="@color/brown4"
+                android:paddingVertical="4dp"
+                android:background="@color/brown4"/>
+
+            <View
+                android:layout_marginHorizontal="16dp"
+                android:layout_below="@+id/rl_qna_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/brown1"/>
+            <TextView
+                android:id="@+id/txt_qna_detail_qna_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="나는 질문의 내용"
+                android:textSize="16dp"
+                android:typeface="serif"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="4dp"
+                android:background="@color/brown4"/>
+
+
+            <View
+                android:layout_below="@+id/rl_qna_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginVertical="8dp"
+                android:background="@color/brown1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:typeface="serif"
+                android:textColor="@color/brown1"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="답변 "/>
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/txt_qna_detail_qna_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="나는 답변의 제목"
+                android:paddingHorizontal="16dp"
+                android:backgroundTint="@color/brown1"
+                android:textSize="16dp"
+                android:typeface="serif"
+                android:textStyle="bold"
+                android:textColor="@color/brown4"
+                android:paddingVertical="4dp"
+                android:background="@color/brown4"/>
+
+            <View
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/brown1"/>
+            <TextView
+                android:id="@+id/txt_qna_detail_answer_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="나는 답변의 내용"
+                android:textSize="16dp"
+                android:typeface="serif"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="4dp"
+                android:background="@color/brown4"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -9,6 +9,7 @@ data class GetQnaListResponse(
         @SerializedName("message")
         @Expose
         @JvmField
-        open var message : ArrayList<qnaListData>
+        open var message : String? = null,
+var data : ArrayList<qnaListData>
 
 )
