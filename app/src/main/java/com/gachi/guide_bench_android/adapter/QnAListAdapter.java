@@ -42,9 +42,7 @@ public class QnAListAdapter extends RecyclerView.Adapter<QnAListAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull QnAListAdapter.ViewHolder holder, int position) {
         final int pos = position;
-        holder.txt_qna_list_num.setText(pos);
-        holder.txt_qna_list_username.setText(bundle.getString("NAME"));
-        holder.txt_qna_list_title.setText(bundle.getString("TITLE"));
+
     }
 
     @Override

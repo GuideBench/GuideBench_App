@@ -50,7 +50,8 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetEventLIstResponse> call, Response<GetEventLIstResponse> response) {
                 if (response.isSuccessful()) {
-                    ArrayList<EventData> temp = response.body().message;
+                    ArrayList<EventData> temp = new ArrayList<EventData>();
+                    temp= response.body().message;
                     if (temp.size() > 0) {
                         int position = eventListAdapter.getItemCount();
                         eventListAdapter.getEventList().addAll(temp);

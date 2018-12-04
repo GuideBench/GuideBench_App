@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gachi.guide_bench_android.BoardActivity;
-import com.gachi.guide_bench_android.EventActivity;
 import com.gachi.guide_bench_android.QnAActivity;
 import com.gachi.guide_bench_android.R;
 import com.gachi.guide_bench_android.SeoulStoreActivity;

@@ -21,11 +21,7 @@ private RecyclerView mRecyclerView;
         setContentView(R.layout.activity_qna);
 
         Back();
-//        mRecyclerView = (RecyclerView) findViewById(R.id.board_qna_recycler_view);
-//        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-//        mRecyclerView.setLayoutManager(mLayoutManager);
-//        QnAListAdapter qnaListAdapter = new QnAListAdapter(this);
-//        mRecyclerView.setAdapter(qnaListAdapter);
+
 
         img_qna_write=(ImageView)findViewById(R.id.img_qna_write);
         img_qna_write.setOnClickListener(new View.OnClickListener() {

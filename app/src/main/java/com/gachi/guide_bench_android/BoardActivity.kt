@@ -54,6 +54,7 @@ class BoardActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     Toast.makeText(applicationContext, "이벤트가 불러졌습니다.", Toast.LENGTH_LONG).show()
                     val temp: ArrayList<EventData> = response.body()!!.message
+
                     if (temp.size > 0) {
                         val position = eventListAdapter.itemCount
                         eventListAdapter.eventList.addAll(temp)

@@ -4,6 +4,7 @@ package com.gachi.guide_bench_android.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,18 +41,21 @@ public class MapStoreListAdapter extends RecyclerView.Adapter<MapStoreListAdapte
     // 필수로 Generate 되어야 하는 메소드 2 : ListView의 getView 부분을 담당하는 메소드
     @Override
     public void onBindViewHolder(final MapStoreListAdapter.ViewHolder viewHolder, int position) {
-////        Log.v("communityFriendsList", storeItems.size() + " ");
-//        viewHolder.txt_store_or_market.setText(storeItems.get(position).getStoretype());
-//        viewHolder.txt_store_name.setText(storeItems.get(position).getStorename());
-//        viewHolder.txt_store_address.setText(storeItems.get(position).getStoreaddress());
-//        setAnimation(holder.imageView, position);
+//        Log.v("communityFriendsList", storeItems.size() + " ");
+//        Log.v("communityFriendsList", storeItems.get(0).getStoretype());
+//        Log.v("포지션", String.valueOf(position));
+        //viewHolder.txt_store_or_market.setText(storeItems.get(0).getStoretype());
+        viewHolder.txt_store_or_market.setText(storeItems.get(position).getStoretype());
+        viewHolder.txt_store_name.setText(storeItems.get(position).getStorename());
+        viewHolder.txt_store_address.setText(storeItems.get(position).getStoreaddress());
+        //setAnimation(holder.imageView, position);
 
     }
 
 
     @Override
     public int getItemCount() {
-        return 6;
+        return storeItems.size();
     }
 
     private void setAnimation(View viewToAnimate, int position) {

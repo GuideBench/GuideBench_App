@@ -38,8 +38,8 @@ public class MainMapActivity extends AppCompatActivity implements OnMapReadyCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         getMap();
-        setRecyclerView();
         makeStoreList();
+        setRecyclerView();
     }
 
     private void makeStoreList() {
