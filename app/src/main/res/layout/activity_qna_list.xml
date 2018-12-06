@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="wrap_content" android:layout_height="wrap_content">
 
 
     <LinearLayout
@@ -48,6 +48,75 @@
             android:layout_height="wrap_content"
             android:text="제목" />
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_qna_detail"
+        android:visibility="gone"
+        android:layout_marginHorizontal="8dp"
+        android:background="@color/brown3"
+        android:layout_below="@+id/ll_qna_list2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/txt_q"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="@color/brown1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 질문"/>
+        <TextView
+            android:id="@+id/txt_qna_my_question"
+            android:typeface="serif"
+            android:layout_below="@+id/txt_q"
+            android:layout_marginVertical="8dp"
+            android:background="@color/brown4"
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/brown2"
+            android:text="내가 작성한 질문"
+            android:padding="8dp"
+            android:layout_height="80dp" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_below="@+id/txt_qna_my_question"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/brown1"/>
+
+        <TextView
+            android:layout_below="@+id/line2"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/txt_a"
+            android:textStyle="bold"
+            android:textColor="@color/brown1"
+            android:typeface="serif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="답변"/>
+        <TextView
+            android:id="@+id/txt_qna_answer"
+            android:typeface="serif"
+            android:layout_below="@+id/txt_a"
+            android:layout_marginVertical="8dp"
+            android:background="@color/brown4"
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:text="답변을 조금만 기다려주세요!"
+            android:textColor="@color/brown2"
+            android:padding="8dp"
+            android:layout_height="80dp" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_below="@+id/txt_qna_answer"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/brown1"/>
+    </RelativeLayout>
     <View
         android:id="@+id/line1"
         android:layout_marginHorizontal="8dp"

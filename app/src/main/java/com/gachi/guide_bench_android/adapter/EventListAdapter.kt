@@ -9,8 +9,7 @@ import android.widget.TextView
 import com.gachi.guide_bench_android.R
 import com.gachi.guide_bench_android.data.EventData
 
-class EventListAdapter(val ctx: Context, val eventList: ArrayList<EventData>) :
-        RecyclerView.Adapter<EventListAdapter.Holder>() {
+class EventListAdapter(val ctx: Context, val eventList: ArrayList<EventData>) : RecyclerView.Adapter<EventListAdapter.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(ctx).inflate(R.layout.activity_event_list, parent, false)
         return Holder(view)

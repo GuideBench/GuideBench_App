@@ -28,26 +28,16 @@ public class QnAActivity extends AppCompatActivity {
 private ImageView img_qna_write;
     private RecyclerView mRecyclerView;
     private QnAListAdapter qnaListAdapter;
-    private ArrayList<qnaListData> qnaListData = new ArrayList<qnaListData>();
+    private ArrayList<qnaListData> qnaListData = new ArrayList<>();
     private NetworkService networkService = ApplicationController.Companion.getInstance().getNetworkService();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qna);
-
         getQnaListResponse();
         SetRecyclerView();
         Back();
 
-
-        img_qna_write=(ImageView)findViewById(R.id.img_qna_write);
-        img_qna_write.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(QnAActivity.this,QnAWirteActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void getQnaListResponse() {
@@ -64,6 +54,7 @@ private ImageView img_qna_write;
                     ArrayList<qnaListData> temp = new ArrayList<qnaListData>();
                     temp= response.body().getData();
                     if (temp.size() > 0) {
+                        Log.v("tempsize!!", String.valueOf(temp.size()));
                         int position = qnaListAdapter.getItemCount();
                         qnaListAdapter.getQnaListData().addAll(temp);
                         qnaListAdapter.notifyItemInserted(position);
@@ -85,16 +76,26 @@ private ImageView img_qna_write;
         mRecyclerView = (RecyclerView) findViewById(R.id.board_qna_recycler_view);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        //크기가 변하지 않는다면 true로 설정하기
-        mRecyclerView.setHasFixedSize(true);
-
         qnaListAdapter = new QnAListAdapter(this, qnaListData);
         mRecyclerView.setAdapter(qnaListAdapter);
+        //크기가 변하지 않는다면 true로 설정하기
+       // mRecyclerView.setHasFixedSize(true); 이거지우니까 리사이클러뷰 설정 됐음 ㅠㅠ...
+
 
     }
 
-
     public void Back(){
+
+
+
+        img_qna_write=(ImageView)findViewById(R.id.img_qna_write);
+        img_qna_write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(QnAActivity.this,QnAWirteActivity.class);
+                startActivity(intent);
+            }
+        });
         img_board_back=(ImageView)findViewById(R.id.img_board_back);
         img_board_back.setOnClickListener(new View.OnClickListener() {
             @Override
