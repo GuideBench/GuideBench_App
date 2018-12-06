@@ -9,5 +9,10 @@
         <item name="windowNoTitle">true</item> <!-- 타이틀바 제거 -->
         <item name="android:windowFullscreen">true</item> <!-- 풀스크린 -->
     </style>
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/brown1</item>
+        <item name="android:textCursorDrawable">@color/brown1</item>
+    </style>
+
 
 </resources>

@@ -87,7 +87,7 @@
 
         <Button
             android:id="@+id/b_act_login"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:background="@color/brown2"
@@ -97,7 +97,7 @@
 
         <Button
             android:id="@+id/b_act_login_signup"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:background="@color/brown1"
