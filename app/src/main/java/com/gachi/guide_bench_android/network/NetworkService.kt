@@ -1,5 +1,6 @@
 package com.gachi.guide_bench_android.network
 
+import com.gachi.guide_bench_android.get.GetBenchListResponse
 import com.gachi.guide_bench_android.get.GetEventLIstResponse
 import com.gachi.guide_bench_android.get.GetQnaListResponse
 import com.gachi.guide_bench_android.post.LoginData
@@ -44,4 +45,11 @@ interface NetworkService {
     fun getQnaListResponse(
             @Header("Content-Type") content_type: String
     ) : Call<GetQnaListResponse>
+
+    //벤치 이름위치리스트 가져오기
+    @GET("bench/{bench_id}/getInfo")
+    fun getBenchListResponse(
+            @Header("Content-Type") content_type: String,
+            @Path("bench_id") bench_id: String
+    ) : Call<GetBenchListResponse>
 }
