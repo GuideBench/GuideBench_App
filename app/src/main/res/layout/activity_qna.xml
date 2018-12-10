@@ -73,6 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="이름"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/brown1"
                 android:typeface="serif" />
@@ -88,6 +89,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="6"
                 android:text="제목"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/brown1"
                 android:typeface="serif" />

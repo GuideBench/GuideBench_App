@@ -1,10 +1,8 @@
 package com.gachi.guide_bench_android;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -15,21 +13,21 @@ import android.widget.Toast;
 
 import com.gachi.guide_bench_android.network.ApplicationController;
 import com.gachi.guide_bench_android.network.NetworkService;
+import com.gachi.guide_bench_android.post.LoginData;
 import com.gachi.guide_bench_android.post.PostSignInResponse;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
-
+    public static LoginData temp1;
+    public String input_idx;
     Button b_act_login_longin;
     Button b_act_login_signup;
     private NetworkService networkService=  ApplicationController.Companion.getInstance().getNetworkService();
@@ -103,12 +101,12 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(response.isSuccessful()) {
                     Log.v("로그인 페이지 message", response.body().getMessage().toString());
-                    saveID();
-
+                   temp1 = response.body().getData();
+                   input_idx= temp1.get_id();
+                    Log.v("user_idx =",input_idx);
+                   saveID(input_idx);
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
                     startActivity(intent);
-
                     Toast.makeText(getApplicationContext(), "환영합니다.", Toast.LENGTH_LONG).show();
                 }else{
                     TextView txt_login_id_err=(TextView) findViewById(R.id.txt_login_id_err);
@@ -126,12 +124,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
         // 값 불러오기
-        private void getID(){
-            EditText et_act_login_idEdit=(EditText) findViewById(R.id.et_act_login_idEdit);
-            String input_id= (String)et_act_login_idEdit.getText().toString();
+        public void getID(){
             SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
-            String loginId = pref.getString("input_id",null);
-            pref.getString("input_id", input_id);
+            String loginId = pref.getString("input_idx",null);
+            //pref.getString("input_idx", input_idx);
             if (loginId != null){
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -140,12 +136,10 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // 값 저장하기
-        private void saveID(){
-            EditText et_act_login_idEdit=(EditText) findViewById(R.id.et_act_login_idEdit);
-            String input_id= (String)et_act_login_idEdit.getText().toString();
+        private void saveID(String input_idx){
             SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
             SharedPreferences.Editor editor = pref.edit();
-            editor.putString("input_id", input_id);
+            editor.putString("input_idx", input_idx);
             editor.commit();
         }
 
@@ -153,7 +147,7 @@ public class LoginActivity extends AppCompatActivity {
         public void removePreferences(){
             SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
             SharedPreferences.Editor editor = pref.edit();
-            editor.remove("input_id");
+            editor.remove("input_idx");
             editor.commit();
         }
 

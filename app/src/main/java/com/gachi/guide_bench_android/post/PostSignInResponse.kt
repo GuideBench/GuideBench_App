@@ -10,5 +10,5 @@ data class PostSignInResponse(
     val data : LoginData
 )
 data class LoginData(
-        val user_idx : String
+        val _id : String
 )

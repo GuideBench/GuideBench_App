@@ -1,87 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/brown4">
+
     <RelativeLayout
         android:id="@+id/rl_qna_write_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="질의응답 작성하기"
-            android:typeface="serif"
-            android:textSize="16dp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/brown1"
+            android:background="@color/brown3"
             android:paddingVertical="16dp"
-            android:background="@color/brown3"/>
+            android:text="질의응답 작성하기"
+            android:textAlignment="center"
+            android:textColor="@color/brown1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
         <ImageView
             android:id="@+id/img_board_back"
-            android:layout_centerVertical="true"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentLeft="true"
-            android:src="@drawable/icon_arrow_left"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_arrow_left" />
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_below="@+id/rl_qna_write_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_qna_write_title">
         <LinearLayout
-            android:layout_marginTop="40dp"
-            android:layout_marginHorizontal="16dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/edit_qna_write_name"
-                android:inputType="text"
-                android:lines="1"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:hint="이름"
-                android:paddingLeft="16dp"/>
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
             <EditText
                 android:id="@+id/edit_qna_write_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:hint="제목"
                 android:inputType="text"
                 android:lines="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="제목"
-                android:paddingLeft="16dp"/>
+                android:paddingLeft="16dp" />
             <!--<EditText-->
-                <!--android:id="@+id/edit_qna_write_content"-->
-                <!--android:layout_marginTop="16dp"-->
-                <!--android:inputType="textMultiLine"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="내용"-->
-                <!--android:paddingLeft="16dp"/>-->
-            <EditText android:id="@+id/edit_qna_write_content"
-
+            <!--android:id="@+id/edit_qna_write_content"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:inputType="textMultiLine"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="내용"-->
+            <!--android:paddingLeft="16dp"/>-->
+            <EditText
+                android:id="@+id/edit_qna_write_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="5"
                 android:gravity="top|left"
+                android:hint="내용(최대 다섯줄 입력이 가능합니다)"
                 android:inputType="textMultiLine"
-            android:paddingLeft="16dp"
-            android:hint="내용(최대 다섯줄 입력이 가능합니다)"
-                android:scrollHorizontally="true"
+                android:lines="5"
+                android:maxWidth="5.0dip"
                 android:minWidth="10.0dip"
-                android:maxWidth="5.0dip"/>
+                android:paddingLeft="16dp"
+                android:scrollHorizontally="true" />
         </LinearLayout>
     </RelativeLayout>
+
     <Button
         android:id="@+id/btn_qna_write_complete"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/brown3"
         android:text="작성완료"
-        android:textColor="@color/brown1"
-        android:layout_marginBottom="16dp"/>
+        android:textColor="@color/brown1" />
 </RelativeLayout>

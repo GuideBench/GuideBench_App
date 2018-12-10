@@ -43,7 +43,7 @@ private TextView txt_setting_bluetooth;
             public void onClick(View v) {
                 SharedPreferences pref =getActivity().getSharedPreferences("pref", MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
-                editor.remove("input_id");
+                editor.remove("input_idx");
                 editor.commit();
                 Log.v("로그아웃 message","로그아웃!");
                 Intent intent = new Intent(getActivity(), LoginActivity.class);

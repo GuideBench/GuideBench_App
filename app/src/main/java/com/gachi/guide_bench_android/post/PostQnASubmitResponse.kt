@@ -9,6 +9,5 @@ data class PostQnASubmitResponse(
         @Expose
         open var message : String?=null,
         var content : String,
-        var name :String,
         var title : String
 )

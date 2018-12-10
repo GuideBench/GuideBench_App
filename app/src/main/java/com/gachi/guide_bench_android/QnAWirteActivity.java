@@ -1,6 +1,7 @@
 package com.gachi.guide_bench_android;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 
 import com.gachi.guide_bench_android.network.ApplicationController;
 import com.gachi.guide_bench_android.network.NetworkService;
+import com.gachi.guide_bench_android.post.LoginData;
 import com.gachi.guide_bench_android.post.PostQnASubmitResponse;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -23,13 +25,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class QnAWirteActivity extends AppCompatActivity {
     private static final String TAG = "QnAWirteActivity";
     private ImageView img_board_back;
     private Button btn_qna_write_complete;
-    private EditText edit_qna_write_name;
     private EditText edit_qna_write_title;
     private EditText edit_qna_write_content;
+
 
     private NetworkService networkService=  ApplicationController.Companion.getInstance().getNetworkService();
 
@@ -37,7 +40,6 @@ public class QnAWirteActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qna_write);
-
         Back();
         setOnBtnClickListerner();
 
@@ -46,7 +48,8 @@ public class QnAWirteActivity extends AppCompatActivity {
 
     private void setOnBtnClickListerner() {
         btn_qna_write_complete=(Button)findViewById(R.id.btn_qna_write_complete);
-        btn_qna_write_complete.setOnClickListener(new View.OnClickListener() {
+        btn_qna_write_complete.setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getQnAWriteResponseData();
@@ -55,24 +58,22 @@ public class QnAWirteActivity extends AppCompatActivity {
     }
 
     private void getQnAWriteResponseData() {
-        edit_qna_write_name = (EditText) findViewById(R.id.edit_qna_write_name);
         edit_qna_write_title = (EditText) findViewById(R.id.edit_qna_write_title);
         edit_qna_write_content = (EditText) findViewById(R.id.edit_qna_write_content);
-        String input_name = edit_qna_write_name.getText().toString();
         String input_title = edit_qna_write_title.getText().toString();
         String input_content = edit_qna_write_content.getText().toString();
         JSONObject JsonObject = new JSONObject();
         try {
             JsonObject.put("title", input_title);
             JsonObject.put("content", input_content);
-            JsonObject.put("name", input_name);
         } catch (JSONException e) {
             Log.e(TAG, "JSONEXception");
         }
 
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        String loginId = pref.getString("input_idx",null);
         JsonObject gsonObject = (JsonObject) (new JsonParser()).parse(JsonObject.toString());
-
-        Call<PostQnASubmitResponse> postQnASubmitResponse = networkService.PostQnASubmitResponse("application/json", gsonObject);
+        Call<PostQnASubmitResponse> postQnASubmitResponse = networkService.PostQnASubmitResponse("application/json",loginId,gsonObject);
         postQnASubmitResponse.enqueue(new Callback<PostQnASubmitResponse>() {
 
                 @Override
@@ -84,8 +85,9 @@ public class QnAWirteActivity extends AppCompatActivity {
                 public void onResponse
                 (Call < PostQnASubmitResponse > call, Response < PostQnASubmitResponse > response){
                 if (response.isSuccessful()) {
-                    Log.v("check qna ok", "check qna ok!!!");
-
+                    SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+                    String loginId = pref.getString("input_idx",null);
+                    Log.v(" !!! userid =", loginId);
                     Log.v("qna 작성 액티비티 message", response.body().getMessage().toString());
                     Intent intent = new Intent(QnAWirteActivity.this,QnAActivity.class);
                     startActivity(intent);
