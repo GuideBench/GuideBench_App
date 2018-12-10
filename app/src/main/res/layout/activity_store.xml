@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/txt_seoul_title"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="서울의 유명한 시장 및 맛집"
@@ -24,11 +25,23 @@
             android:layout_height="48dp"
             android:layout_alignParentLeft="true"
             android:src="@drawable/icon_arrow_left"/>
+
     </RelativeLayout>
+    <TextView
+        android:layout_below="@+id/rl_store_list_title"
+        android:id="@+id/txt_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginLeft="16dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textSize="16dp"
+        android:text=" LIST "/>
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rl_store_list_title">
+        android:layout_below="@+id/txt_list">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -36,7 +49,7 @@
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/board_qna_recycler_view"
+                android:id="@+id/board_seoul_list_recycler_view"
                 ></android.support.v7.widget.RecyclerView>
         </LinearLayout>
     </ScrollView>

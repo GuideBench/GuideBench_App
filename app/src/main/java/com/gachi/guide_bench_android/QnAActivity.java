@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.gachi.guide_bench_android.adapter.QnAListAdapter;
 import com.gachi.guide_bench_android.data.qnaListData;
@@ -36,7 +35,7 @@ private ImageView img_qna_write;
         setContentView(R.layout.activity_qna);
         getQnaListResponse();
         SetRecyclerView();
-        Back();
+        SetOnClickListener();
 
     }
 
@@ -58,7 +57,7 @@ private ImageView img_qna_write;
                         int position = qnaListAdapter.getItemCount();
                         qnaListAdapter.getQnaListData().addAll(temp);
                         qnaListAdapter.notifyItemInserted(position);
-                        Toast.makeText(getApplicationContext(), "질문이 불러와졌다..", Toast.LENGTH_LONG).show();
+                        Log.v("질문리스트 :" , "불러와 졌습니다");
                     }
                 }
             }
@@ -84,7 +83,7 @@ private ImageView img_qna_write;
 
     }
 
-    public void Back(){
+    public void SetOnClickListener(){
 
 
 

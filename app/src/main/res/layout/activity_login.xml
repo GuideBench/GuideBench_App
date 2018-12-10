@@ -43,7 +43,7 @@
                     android:inputType="text|textCapWords|textNoSuggestions"
                     android:textColor="@color/brown1"
                     android:hint="아이디를 입력하세요"
-                    android:textSize="16dp"
+                    android:textSize="18dp"
                     android:typeface="serif"/>
                 <TextView
                     android:id="@+id/txt_login_id_err"
@@ -53,8 +53,8 @@
                     android:layout_marginLeft="8dp"
                     android:textColor="@color/brown1"
                     android:visibility="invisible"
-                    android:text="아이디 또는 비밀번호를 확인하세요"
-                    android:textSize="10dp"/>
+                    android:text="아이디 또는 비밀번호를 다시 확인하세요"
+                    android:textSize="12dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -70,7 +70,7 @@
                     android:hint="비밀번호를 입력하세요"
                     android:inputType="textPassword"
                     android:textColor="@color/brown1"
-                    android:textSize="16dp"
+                    android:textSize="18dp"
                     android:typeface="serif"/>
             </RelativeLayout>
 

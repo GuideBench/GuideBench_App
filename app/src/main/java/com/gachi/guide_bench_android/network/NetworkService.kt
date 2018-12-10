@@ -3,6 +3,7 @@ package com.gachi.guide_bench_android.network
 import com.gachi.guide_bench_android.get.GetBenchListResponse
 import com.gachi.guide_bench_android.get.GetEventLIstResponse
 import com.gachi.guide_bench_android.get.GetQnaListResponse
+import com.gachi.guide_bench_android.get.GetSeoulListResponse
 import com.gachi.guide_bench_android.post.LoginData
 import com.gachi.guide_bench_android.post.PostQnASubmitResponse
 import com.gachi.guide_bench_android.post.PostSignInResponse
@@ -52,4 +53,10 @@ interface NetworkService {
             @Header("Content-Type") content_type: String,
             @Path("bench_id") bench_id: String
     ) : Call<GetBenchListResponse>
+
+    //서울의 모든 맛집과 시장 불러오기
+    @GET("/bench/getAllinfo")
+    fun getSeoulListResponse(
+            @Header("Content-Type") content_type: String
+    ) : Call<GetSeoulListResponse>
 }
