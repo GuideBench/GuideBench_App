@@ -1,13 +1,16 @@
 package com.gachi.guide_bench_android;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gachi.guide_bench_android.adapter.EventListAdapter;
@@ -15,6 +18,11 @@ import com.gachi.guide_bench_android.data.EventData;
 import com.gachi.guide_bench_android.get.GetEventLIstResponse;
 import com.gachi.guide_bench_android.network.ApplicationController;
 import com.gachi.guide_bench_android.network.NetworkService;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -24,6 +32,7 @@ import retrofit2.Response;
 
 
 public class EventActivity extends AppCompatActivity {
+    private static final String TAG = "EventActivity";
     private ImageView img_event_back;
     private RecyclerView mRecyclerView;
     private EventListAdapter eventListAdapter;
@@ -67,6 +76,7 @@ public class EventActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
     private void SetRecyclerView() {

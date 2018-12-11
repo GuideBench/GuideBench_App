@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         // 값 불러오기
-        public void getID(){
+        public String getID(){
             SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
             String loginId = pref.getString("input_idx",null);
             //pref.getString("input_idx", input_idx);
@@ -133,6 +133,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), "환영합니다", Toast.LENGTH_LONG).show();
             }
+            return loginId;
         }
 
         // 값 저장하기

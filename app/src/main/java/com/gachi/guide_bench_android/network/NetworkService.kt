@@ -4,10 +4,7 @@ import com.gachi.guide_bench_android.get.GetBenchListResponse
 import com.gachi.guide_bench_android.get.GetEventLIstResponse
 import com.gachi.guide_bench_android.get.GetQnaListResponse
 import com.gachi.guide_bench_android.get.GetSeoulListResponse
-import com.gachi.guide_bench_android.post.LoginData
-import com.gachi.guide_bench_android.post.PostQnASubmitResponse
-import com.gachi.guide_bench_android.post.PostSignInResponse
-import com.gachi.guide_bench_android.post.PostSignUpResponse
+import com.gachi.guide_bench_android.post.*
 import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.http.*
@@ -59,4 +56,12 @@ interface NetworkService {
     fun getSeoulListResponse(
             @Header("Content-Type") content_type: String
     ) : Call<GetSeoulListResponse>
+
+    //즐겨찾기 리스트
+    @POST("/bookmark")
+    fun postLikeListResponse(
+            @Header("Content-Type") content_type: String,
+            @Header("user_id") user_id: String,
+            @Body body: JsonObject
+    ) : Call<PostLikeListResponse>
 }

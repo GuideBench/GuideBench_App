@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         mainIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         final ImageView likeIcon = new ImageView(this);
-        likeIcon.setImageResource(R.drawable.ic_likelist_unselected);
+        likeIcon.setImageResource(R.drawable.ic_likelist_actived);
         likeIcon.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         final ImageView boardIcon = new ImageView(this);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         mainIconAct.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         final ImageView likeIconAct = new ImageView(this);
-        likeIconAct.setImageResource(R.drawable.ic_likelist_active);
+        likeIconAct.setImageResource(R.drawable.ic_likelist_unselected);
         likeIconAct.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         final ImageView boardIconAct = new ImageView(this);
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                         iv.setImageResource(R.drawable.ic_main_active);
                         break;
                     case 1:
-                        iv.setImageResource(R.drawable.ic_likelist_active);
+                        iv.setImageResource(R.drawable.ic_likelist_unselected);
                         break;
                     case 2:
                         iv.setImageResource(R.drawable.ic_board_active);
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         iv.setImageResource(R.drawable.ic_main_unselected);
                         break;
                     case 1:
-                        iv.setImageResource(R.drawable.ic_likelist_unselected);
+                        iv.setImageResource(R.drawable.ic_likelist_actived);
                         break;
                     case 2:
                         iv.setImageResource(R.drawable.ic_board_unselected);

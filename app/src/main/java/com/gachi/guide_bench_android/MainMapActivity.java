@@ -1,6 +1,5 @@
 package com.gachi.guide_bench_android;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
