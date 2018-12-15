@@ -22,7 +22,7 @@ public class CustomViewPager extends ViewPager {
             return super.onTouchEvent(ev);
         }
 
-        return false;
+        return true;
     }
 
     @Override

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_marginTop="4dp"
+        android:background="@color/brown3"
+        android:id="@+id/rl_store_list"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_event_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="이벤트 이름 "
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textSize="16dp"
+            android:textColor="@color/brown1"
+            android:layout_marginHorizontal="8dp"/>
+        <ImageView
+            android:id="@+id/img_event_like"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentRight="true"
+            android:visibility="invisible"
+            android:layout_marginHorizontal="16dp"
+            android:src="@drawable/ic_likelist_unselected"/>
+
+
+    </RelativeLayout>
+    <View
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/line1"
+        android:layout_below="@+id/rl_store_list"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brown1"/>
+    <TextView
+        android:id="@+id/txt_event_list_content"
+        android:layout_below="@+id/line1"
+        android:layout_marginHorizontal="16dp"
+        android:background="@color/brown3"
+        android:layout_width="match_parent"
+        android:textSize="16dp"
+        android:textColor="@color/brown1"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="16dp"
+        android:typeface="serif"
+        android:layout_height="wrap_content"
+
+        android:text="이벤트 내용"
+        />
+
+
+    <View
+        android:layout_marginVertical="4dp"
+        android:id="@+id/line3"
+        android:layout_below="@+id/txt_event_list_content"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brown1"/>
+
+</RelativeLayout>

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gachi.guide_bench_android.adapter.SeoulListAdapter;
+//import com.gachi.guide_bench_android.data.SeoulData;
+import com.gachi.guide_bench_android.data.BenchData;
 import com.gachi.guide_bench_android.data.SeoulInfoList;
 import com.gachi.guide_bench_android.get.GetSeoulListResponse;
 import com.gachi.guide_bench_android.network.ApplicationController;
@@ -25,6 +27,7 @@ import retrofit2.Response;
 
 public class SeoulStoreActivity extends AppCompatActivity {
 private ArrayList<SeoulInfoList> seoulItems;
+private ArrayList<BenchData> benchData;
 private SeoulListAdapter Adapter;
     private NetworkService networkService = ApplicationController.Companion.getInstance().getNetworkService();
     private ImageView img_store_back;
@@ -52,7 +55,8 @@ private RecyclerView mRecyclerView;
         //크기가 변하지 않는다면 true로 설정하기
         //mRecyclerView.setHasFixedSize(true);
         seoulItems = new ArrayList<SeoulInfoList>();
-        Adapter = new SeoulListAdapter(this, seoulItems);
+        benchData = new ArrayList<BenchData>();
+        Adapter = new SeoulListAdapter(this, seoulItems, benchData);
         mRecyclerView.setAdapter(Adapter);
     }
 
@@ -69,9 +73,10 @@ private RecyclerView mRecyclerView;
                 public void onResponse(Call<GetSeoulListResponse> call, Response<GetSeoulListResponse> response) {
                     if (response.isSuccessful()) {
                         ArrayList<SeoulInfoList> seoulList = new ArrayList<SeoulInfoList>();
+                        ArrayList<BenchData> benchData = new ArrayList<>();
                         seoulList = response.body().getData();
                         if (seoulList.size() > 0) {
-                            Log.v("benchList size = ", String.valueOf(seoulList.size()));
+                            Log.v("seoulList size = ", String.valueOf(benchData.size()));
                             int position = Adapter.getItemCount();
                             Adapter.getSeoulListData().addAll(seoulList);
                             Adapter.notifyItemInserted(position);

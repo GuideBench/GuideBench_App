@@ -1,8 +1,6 @@
 package com.gachi.guide_bench_android.adapter
 
 import android.content.Context
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.gachi.guide_bench_android.R
 import com.gachi.guide_bench_android.data.EventData
 import com.gachi.guide_bench_android.network.ApplicationController
@@ -58,6 +57,7 @@ class EventListAdapter(val ctx: Context, val eventList: ArrayList<EventData>) : 
 
     private fun postLikeListResponse(context : Context, position: Int,holder: Holder){
         val event_id = eventList[position]._id
+        val event_name = eventList[position].event_title
         var pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE)
         val user_id = pref.getString("input_idx", null) as String
         val jsonObject: JSONObject = JSONObject()
@@ -73,6 +73,7 @@ class EventListAdapter(val ctx: Context, val eventList: ArrayList<EventData>) : 
 
                 if (response.isSuccessful){
 
+                    Toast.makeText(context, "'"+event_name+"'을(를) 좋아요한 이벤트 목록에 등록하였습니다!", Toast.LENGTH_SHORT).show()
                     Log.v("좋아요누르기","통신성공!!")
 
 

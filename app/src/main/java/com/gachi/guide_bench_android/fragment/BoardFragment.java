@@ -38,14 +38,14 @@ public class BoardFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        txt_board_seoul_store = (TextView)view.findViewById(R.id.txt_board_seoul_store);
-        txt_board_seoul_store.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SeoulStoreActivity.class);
-                startActivity(intent);
-            }
-        });
+//        txt_board_seoul_store = (TextView)view.findViewById(R.id.txt_board_seoul_store);
+//        txt_board_seoul_store.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), SeoulStoreActivity.class);
+//                startActivity(intent);
+//            }
+//        });
         txt_board_event = (TextView)view.findViewById(R.id.txt_board_event);
         txt_board_event.setOnClickListener(new View.OnClickListener() {
             @Override

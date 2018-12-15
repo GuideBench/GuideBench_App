@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="24dp"
                 android:layout_marginLeft="16dp"
-                android:text="내가 좋아요한 이벤트"
+                android:text="내가 즐겨찾는 이벤트"
                 android:textColor="@color/brown1"
                 android:textSize="16dp"
                 android:typeface="serif" />
@@ -48,21 +48,21 @@
                 android:layout_height="2dp"
                 android:background="@color/brown2" />
 
-            <TextView
-                android:id="@+id/txt_board_seoul_store"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="24dp"
-                android:layout_marginLeft="16dp"
-                android:text="내가 좋아요 한 시장 및 맛집"
-                android:textColor="@color/brown1"
-                android:textSize="16dp"
-                android:typeface="serif" />
+            <!--<TextView-->
+                <!--android:id="@+id/txt_board_seoul_store"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginVertical="24dp"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:text="내가 좋아요 한 시장 및 맛집"-->
+                <!--android:textColor="@color/brown1"-->
+                <!--android:textSize="16dp"-->
+                <!--android:typeface="serif" />-->
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/brown2" />
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="2dp"-->
+                <!--android:background="@color/brown2" />-->
 
 
             <ImageView

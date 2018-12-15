@@ -12,7 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 import com.gachi.guide_bench_android.R
-import com.gachi.guide_bench_android.data.SeoulData
+import com.gachi.guide_bench_android.data.BenchData
 import com.gachi.guide_bench_android.data.SeoulInfoList
 import com.gachi.guide_bench_android.data.benchListData
 import com.gachi.guide_bench_android.data.qnaListData
@@ -21,8 +21,7 @@ import org.jetbrains.anko.view
 
 import java.util.ArrayList
 
-class SeoulListAdapter(var ctx: Context, val seoulListData: ArrayList<SeoulInfoList>) : RecyclerView.Adapter<SeoulListAdapter.ViewHolder>() {
-
+class SeoulListAdapter(var ctx: Context, val seoulListData: ArrayList<SeoulInfoList>, val BenchData: ArrayList<BenchData>) : RecyclerView.Adapter<SeoulListAdapter.ViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
         val v = LayoutInflater.from(ctx)
                 .inflate(R.layout.activity_map_list, viewGroup, false)
@@ -34,18 +33,18 @@ class SeoulListAdapter(var ctx: Context, val seoulListData: ArrayList<SeoulInfoL
     }
 
     override fun onBindViewHolder(holder: SeoulListAdapter.ViewHolder, position: Int) {
-        holder.txt_store_or_market.text = seoulListData[position].benchinfo_category
-        holder.txt_store_name.text = seoulListData[position].benchinfo_name
-        holder.txt_store_address.text = seoulListData[position].benchinfo_address
+        holder.txt_store_or_market.text = BenchData[position].benchinfo_category
+        holder.txt_store_name.text = BenchData[position].benchinfo_name
+        holder.txt_store_address.text = BenchData[position].benchinfo_address
 
     }
 
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val txt_store_or_market = itemView.findViewById<View>(R.id.txt_store_or_market) as TextView
-        val txt_store_name = itemView.findViewById<View>(R.id.txt_store_name) as TextView
-        val txt_store_address = itemView.findViewById<View>(R.id.txt_store_address) as TextView
+        val txt_store_or_market = itemView.findViewById(R.id.txt_store_or_market) as TextView
+        val txt_store_name = itemView.findViewById(R.id.txt_store_name) as TextView
+        val txt_store_address = itemView.findViewById(R.id.txt_store_address) as TextView
 
     }
 

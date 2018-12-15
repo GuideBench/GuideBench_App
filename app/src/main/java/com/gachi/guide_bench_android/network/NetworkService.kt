@@ -1,9 +1,6 @@
 package com.gachi.guide_bench_android.network
 
-import com.gachi.guide_bench_android.get.GetBenchListResponse
-import com.gachi.guide_bench_android.get.GetEventLIstResponse
-import com.gachi.guide_bench_android.get.GetQnaListResponse
-import com.gachi.guide_bench_android.get.GetSeoulListResponse
+import com.gachi.guide_bench_android.get.*
 import com.gachi.guide_bench_android.post.*
 import com.google.gson.JsonObject
 import retrofit2.Call
@@ -64,4 +61,17 @@ interface NetworkService {
             @Header("user_id") user_id: String,
             @Body body: JsonObject
     ) : Call<PostLikeListResponse>
+
+    //즐겨찾는 이벤트 불러오기
+    @GET("/bookmark/event")
+    fun getEventLikeResponse(
+            @Header("Content-Type") content_type: String,
+            @Header("user_id") user_id: String
+    ) : Call<GetEventLikeResponse>
+
+    //모든 벤치 정보 불러오기 (For MapActivity)
+    @GET("/bench/getAllinfo")
+    fun getBenchAllInfoResponse(
+            @Header("Content-Type") content_type: String
+    ) : Call<GetBenchAllInfoResponse>
 }
