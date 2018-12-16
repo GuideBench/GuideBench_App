@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-# Guide_Bench_web_app
 
-<Head>[Web & App X Guide bench] Project</Head>
-=======
-# GuideBench_App
->>>>>>> 674df19bf84a75d0dd291a033b38af19f879ccb9
+[Web & App X Guide bench] Project : APP
+=============
+ 1. clone하여 zip파일을 다운로드 하세요.
+ 2. zip파일을 압축해제 한 후 android studio를 실행하여 open하세요 ! 
