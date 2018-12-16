@@ -46,7 +46,6 @@ public class MainMapActivity extends AppCompatActivity implements OnMapReadyCall
     private ArrayList<String> id = new ArrayList<String>();
     private NetworkService networkService = ApplicationController.Companion.getInstance().getNetworkService();
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +111,7 @@ public class MainMapActivity extends AppCompatActivity implements OnMapReadyCall
                             ArrayList<benchListData> benchList = new ArrayList<benchListData>();
                             benchList = response.body().getData();
                             if (benchList.size() > 0) {
-                                Log.v("벤치통신 성공! 벤치의 수 = ", String.valueOf(benchList.size()));
+                                Log.v("벤치통신 성공! 맛집 또는 시장 개수 = ", String.valueOf(benchList.size()));
                                 int position = Adapter.getItemCount();
                                 Adapter.getBenchListData().addAll(benchList);
                                 Adapter.notifyItemInserted(position);
@@ -154,7 +153,6 @@ public class MainMapActivity extends AppCompatActivity implements OnMapReadyCall
                         Log.v("bench_name",id.get(i));
                    }
 
-                    Toast.makeText(getApplicationContext(), "모든벤치", Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -171,6 +169,7 @@ public class MainMapActivity extends AppCompatActivity implements OnMapReadyCall
     @Override
     public void onMapReady(final GoogleMap map) {
         int size = bench_name.size();
+        Log.v("포문외안돌와?", String.valueOf(size));
         for (int idx = 0; idx < size; idx++) {
 
             // 1. 마커 옵션 설정 (만드는 과정)
@@ -182,10 +181,10 @@ public class MainMapActivity extends AppCompatActivity implements OnMapReadyCall
             // 2. 마커 생성 (마커를 나타냄)
             map.addMarker(makerOptions);
         }
-
         map.setOnMarkerClickListener(this);
-        map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(bench_latitude.get(0), bench_longitude.get(0))));
-        map.animateCamera(CameraUpdateFactory.zoomTo(9));
+        map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(37.6,127)));
+        map.animateCamera(CameraUpdateFactory.zoomTo(11));
+
     }
 
     @Override

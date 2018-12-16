@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getSignInResponseData();
-
             }
 
         });
@@ -89,15 +88,6 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<PostSignInResponse> call, Response<PostSignInResponse> response) {
-                EditText et_act_login_idEdit=(EditText) findViewById(R.id.et_act_login_idEdit);
-               String input_id= (String)et_act_login_idEdit.getText().toString();
-//                SharedPreferences sharedPreference = getSharedPreferences("MYPREFRENCE", Context.MODE_MULTI_PROCESS | Context.MODE_WORLD_READABLE);
-//
-//                if (sharedPreference.getString("user_id",input_id)!=null){
-//                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
 
                 if(response.isSuccessful()) {
                     Log.v("로그인 페이지 message", response.body().getMessage().toString());

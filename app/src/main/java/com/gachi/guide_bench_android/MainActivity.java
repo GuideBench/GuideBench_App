@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private PagerAdapter adapter;
     private CustomViewPager viewPager;
     private TabLayout tabLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,12 +123,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() != 0)
-            getFragmentManager().popBackStack();
-        else {
-            super.onBackPressed();
-        }
-
     }
 
     public void visibleTabLayout() {

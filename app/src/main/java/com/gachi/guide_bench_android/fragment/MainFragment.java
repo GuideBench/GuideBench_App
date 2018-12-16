@@ -11,10 +11,13 @@ import android.widget.RelativeLayout;
 
 import com.gachi.guide_bench_android.MainMapActivity;
 import com.gachi.guide_bench_android.R;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 
 public class MainFragment extends Fragment {
     private RelativeLayout rl_main_go_map_img;
     private ImageView img_main_logo;
+    private GoogleMap map;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
