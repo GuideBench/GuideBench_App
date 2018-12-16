@@ -93,6 +93,7 @@ private ImageView img_qna_write;
             public void onClick(View view) {
                 Intent intent = new Intent(QnAActivity.this,QnAWirteActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         img_board_back=(ImageView)findViewById(R.id.img_board_back);

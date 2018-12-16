@@ -1,6 +1,7 @@
 package com.gachi.guide_bench_android.adapter
 
 import android.content.Context
+import android.media.Image
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -52,6 +53,7 @@ class EventListAdapter(val ctx: Context, val eventList: ArrayList<EventData>) : 
         val title: TextView = itemView.findViewById(R.id.txt_event_list_title) as TextView
         val content: TextView = itemView.findViewById(R.id.txt_event_list_content) as TextView
         val likeimg : ImageView = itemView.findViewById(R.id.img_event_like) as ImageView
+        val likeimglist : ArrayList<Image> = ArrayList()
     }
 
 
@@ -70,15 +72,9 @@ class EventListAdapter(val ctx: Context, val eventList: ArrayList<EventData>) : 
             }
 
             override fun onResponse(call: Call<PostLikeListResponse>, response: Response<PostLikeListResponse>) {
-
                 if (response.isSuccessful){
-
-                    Toast.makeText(context, "'"+event_name+"'을(를) 좋아요한 이벤트 목록에 등록하였습니다!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "'"+event_name+"'을(를) 즐겨찾는 이벤트 목록에 등록하였습니다!", Toast.LENGTH_SHORT).show()
                     Log.v("좋아요누르기","통신성공!!")
-
-
-
-
                 }
             }
         })
