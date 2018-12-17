@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import com.gachi.guide_bench_android.network.ApplicationController;
@@ -79,10 +80,10 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PostSignUpResponse> call, Response<PostSignUpResponse> response) {
                 if (response.isSuccessful()) {
-                        Log.v("check process2", "check process2!!!");
                         Log.v("회원가입 페이지 message", response.body().getMessage().toString());
 
-                        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                    Toast.makeText(getApplicationContext(),"회원가입이 성공적으로 이루어졌습니다.",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                         startActivity(intent);
                         finish();
                 }
