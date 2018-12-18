@@ -74,7 +74,9 @@ public class SignupActivity extends AppCompatActivity {
         postSignUpResponse.enqueue(new Callback<PostSignUpResponse>() {
             @Override
             public void onFailure(Call<PostSignUpResponse> call, Throwable t) {
+                Toast.makeText(getApplicationContext(),"이미 존재하는 아이디입니다.",Toast.LENGTH_SHORT).show();
                 Log.e("Sign up fail",t.toString());
+
             }
 
             @Override
